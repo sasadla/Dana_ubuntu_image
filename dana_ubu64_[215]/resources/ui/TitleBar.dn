@@ -1,0 +1,35 @@
+/*
+* TitleBar interface
+* A title bar decorates a window with a textual title and a collection of other elements that can control the window's status.
+*/
+
+uses Window
+uses Rect
+uses Canvas
+
+data TitleEvent {
+	int x
+	int y
+	}
+
+interface TitleBar extends Panel {
+	
+	transfer char title[]
+	transfer Rect windowRect
+	
+	const int EVENT_MOVE = 1
+	const int EVENT_MAX = 2
+	const int EVENT_MIN = 3
+	const int EVENT_CLOSE = 4
+	
+	eventsource titleBarEvents
+	
+	TitleBar(char title[])
+	
+	Rect getRect()
+	
+	void setTitle(char title[])
+	char[] getTitle()
+	
+	void setWindowRect(Rect w)
+	}
