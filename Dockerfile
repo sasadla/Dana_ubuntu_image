@@ -1,8 +1,12 @@
 FROM ubuntu
 MAINTAINER Saarim Aatri Sadla "saarimaatri@hotmail.com"
 
-RUN apt-get -yq update
-RUN apt-get -yq upgrade
+RUN set -x \ 
+     && apt-get update \ 
+	 && apt-get -yq upgrade \
+     && apt-get install --no-install-recommends -y \ 
+         build-essential libffi-dev libxml2-dev libxslt-dev libpq-dev \ 
+         $(if [ "$DEVEL" = "yes" ]; then echo 'libjpeg-dev'; fi) 
 
 ADD . /dana_home
 WORKDIR /dana_home/dana_ubu64_[215]
