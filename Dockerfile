@@ -20,7 +20,7 @@ RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.bashrc
 RUN /bin/bash -c "source /etc/bash.bashrc"
 RUN /bin/bash -c "source ~/.bashrc"
 
-ENV export DANA_HOME=/dana_home/dana_ubu64_[215]
+ENV export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
 ENV PATH=$PATH:$DANA_HOME
 
 WORKDIR /
