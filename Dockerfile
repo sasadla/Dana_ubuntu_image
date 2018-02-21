@@ -14,19 +14,13 @@ RUN echo 'PATH=$PATH:$DANA_HOME' >> /etc/bash.bashrc
 RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.bashrc
 RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.bashrc
 
-RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.profile
-RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.profile
-
-
 RUN /bin/bash -c "source /etc/bash.bashrc"
 RUN /bin/bash -c "source ~/.bashrc"
-RUN /bin/bash -c "source ~/.profile"
 
 
 ENV export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215] \
 	PATH=$PATH:$DANA_HOME/bin/dana_home
 
 
-RUN sed -i "s#DANA_HOME#"${DANA_HOME}"#g" /usr/bin/dana_home/dana_ubu64_[215]
 
 WORKDIR /
