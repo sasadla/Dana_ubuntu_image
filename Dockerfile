@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 MAINTAINER Saarim Aatri Sadla "saarimaatri@hotmail.com"
 
 RUN set -x \ 
