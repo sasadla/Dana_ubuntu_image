@@ -3,6 +3,7 @@ MAINTAINER Saarim Aatri Sadla "saarimaatri@hotmail.com"
 
 RUN set -x \ 
      && apt-get update \ 
+	 && apt-get install vim \
 	 && apt-get -yq upgrade \
      && apt-get install --no-install-recommends -y \ 
          build-essential libffi-dev libxml2-dev libxslt-dev libpq-dev \ 
@@ -17,8 +18,14 @@ RUN echo 'PATH=$PATH:$DANA_HOME' >> /etc/bash.bashrc
 RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.bashrc
 RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.bashrc
 
+RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.profile
+RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.profile
+
+
 RUN /bin/bash -c "source /etc/bash.bashrc"
 RUN /bin/bash -c "source ~/.bashrc"
+RUN /bin/bash -c "source ~/.profile"
+
 
 ENV export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
 ENV PATH=$PATH:$DANA_HOME/bin/dana_home
