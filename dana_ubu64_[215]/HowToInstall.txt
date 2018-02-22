@@ -13,10 +13,6 @@ PATH=$PATH:$DANA_HOME
 
 Then save the file, log out and log in again.
 
-To test your installation, open a command prompt anywhere and issue the command: dana esher
-
-You should be presented with the evolution shell runtime command-prompt.
-
-Please note that the GUI subsystem is not currently deployed for Linux so GUI-based examples will not work.
+To test your install, open a terminal anywhere and issue the command: dana examples.SysTest
 
 For more help and tutorials go to http://www.projectdana.com

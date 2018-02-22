@@ -1,6 +1,6 @@
 const int BUF_EX_SIZE = 2048
 
-component provides io.TextFile(AdaptEvents) requires io.File, io.Output out {
+component provides io.TextFile requires io.File, io.Output out {
 	
 	TextFile:TextFile(char path[], byte mode)
 		{
@@ -59,16 +59,6 @@ component provides io.TextFile(AdaptEvents) requires io.File, io.Output out {
 	void TextFile:writeLine(char text[])
 		{
 		write(new char[](text, "\n"))
-		}
-	
-	void AdaptEvents:active()
-		{
-		super()
-		}
-	
-	void AdaptEvents:inactive()
-		{
-		super()
 		}
 	
 	}

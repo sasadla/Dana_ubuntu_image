@@ -1,18 +1,15 @@
 /*
  {"description" : "Make a HTTP request."}
 */
-uses net.http.Header
+
+uses Header
+
 interface HTTPRequest {
 	/*
 	 {"@description" : "Make a HTTP GET request, returning a response structure."}
 	*/
 	HTTPResponse get(char url[], Header headers[])
 	}
-
-//data Header {
-//	char key[]
-//	char value[]
-//	}
 
 data HTTPResponse {
 	char url[]
