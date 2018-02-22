@@ -1,5 +1,4 @@
 FROM ubuntu:latest
-MAINTAINER Saarim Aatri Sadla "saarimaatri@hotmail.com"
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-yq", "upgrade"]
@@ -9,18 +8,13 @@ ADD . /usr/bin/dana_home
 WORKDIR /usr/bin/dana_home/dana_ubu64_[215]
 
 RUN chmod +x dana dnc
-RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> /etc/bash.bashrc
-RUN echo 'PATH=$PATH:$DANA_HOME' >> /etc/bash.bashrc
-RUN echo 'export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.bashrc
-RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.bashrc
 
-RUN /bin/bash -c "source /etc/bash.bashrc"
+RUN echo 'DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]' >> ~/.bashrc
+RUN echo 'PATH=$PATH:$DANA_HOME' >> ~/.bashrc
 RUN /bin/bash -c "source ~/.bashrc"
 
 
-ENV export DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215] \
-	PATH=$PATH:$DANA_HOME/bin/dana_home
-
-
+ENV DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
+ENV PATH=$PATH:$DANA_HOME
 
 WORKDIR /
