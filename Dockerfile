@@ -17,4 +17,8 @@ RUN /bin/bash -c "source ~/.bashrc"
 ENV DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
 ENV PATH=$PATH:$DANA_HOME
 
+WORKDIR /usr/bin/dana_home/dana_ubu64_[215]/components
+
+CMD ["dnc" , "*.dn"]
+
 WORKDIR /
