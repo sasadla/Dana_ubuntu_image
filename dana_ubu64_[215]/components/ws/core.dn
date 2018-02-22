@@ -15,7 +15,7 @@ Invocations on web components are serialised, so no concurrency control is neces
 uses Web
 
 const char SWC_PATH[] = "/swc/"
-const int LISTEN_PORT = 5000
+const int LISTEN_PORT = 2018
 
 data Command {
 	const int GET = 1
