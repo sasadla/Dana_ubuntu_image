@@ -4,6 +4,7 @@ RUN ["apt-get", "update"]
 RUN ["apt-get", "-yq", "upgrade"]
 RUN ["apt-get", "install", "-y", "vim"]
 RUN ["apt-get", "install", "-y", "iputils-ping"]
+RUN ["apt-get", "install", "-y", "sudo"]
 
 ADD . /usr/bin/dana_home
 WORKDIR /usr/bin/dana_home/dana_ubu64_[215]
@@ -19,3 +20,4 @@ ENV DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
 ENV PATH=$PATH:$DANA_HOME
 
 WORKDIR /
+#/usr/bin/dana_home
