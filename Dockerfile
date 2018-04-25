@@ -5,6 +5,7 @@ RUN ["apt-get", "-yq", "upgrade"]
 RUN ["apt-get", "install", "-y", "vim"]
 RUN ["apt-get", "install", "-y", "iputils-ping"]
 RUN ["apt-get", "install", "-y", "sudo"]
+RUN ["apt-get", "install", "-y", "nginx"]
 RUN ["apt-get", "install", "-y", "alpine"]
 
 ADD . /usr/bin/dana_home
