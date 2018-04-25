@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM nginx:alpine
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-yq", "upgrade"]
