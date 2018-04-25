@@ -19,5 +19,7 @@ RUN /bin/bash -c "source ~/.bashrc"
 ENV DANA_HOME=/usr/bin/dana_home/dana_ubu64_[215]
 ENV PATH=$PATH:$DANA_HOME
 
+EXPOSE 2018
+
 WORKDIR /
 #/usr/bin/dana_home
