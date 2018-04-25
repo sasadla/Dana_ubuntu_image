@@ -6,9 +6,6 @@ RUN ["apt-get", "install", "-y", "vim"]
 RUN ["apt-get", "install", "-y", "iputils-ping"]
 RUN ["apt-get", "install", "-y", "sudo"]
 
-COPY default.conf /etc/nginx/conf.d/default.conf
-COPY index.html /usr/share/nginx/html/index.html
-
 ADD . /usr/bin/dana_home
 WORKDIR /usr/bin/dana_home/dana_ubu64_[215]
 
