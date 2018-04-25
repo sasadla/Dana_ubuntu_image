@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM alpine:3.5
 
 RUN ["apt-get", "update"]
 RUN ["apt-get", "-yq", "upgrade"]
@@ -6,7 +6,6 @@ RUN ["apt-get", "install", "-y", "vim"]
 RUN ["apt-get", "install", "-y", "iputils-ping"]
 RUN ["apt-get", "install", "-y", "sudo"]
 RUN ["apt-get", "install", "-y", "nginx"]
-RUN ["apt-get", "install", "-y", "alpine"]
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY index.html /usr/share/nginx/html/index.html
