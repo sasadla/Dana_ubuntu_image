@@ -6,6 +6,10 @@ RUN ["apt-get", "install", "-y", "vim"]
 RUN ["apt-get", "install", "-y", "iputils-ping"]
 RUN ["apt-get", "install", "-y", "sudo"]
 
+RUN apt-get update && apt-get install -y \
+    php5-mcrypt \
+    python-pip
+
 ADD . /usr/bin/dana_home
 WORKDIR /usr/bin/dana_home/dana_ubu64_[215]
 
